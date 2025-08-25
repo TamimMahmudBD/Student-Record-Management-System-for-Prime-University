@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Record Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="container">
+  <h1>Student Record Management System</h1>
+
+  <div class="form-section">
+    <h2>Add / Update Student</h2>
+    <form id="studentForm">
+      <input type="text" id="studentId" placeholder="Student ID" required>
+      <input type="text" id="studentName" placeholder="Name" required>
+      <input type="number" id="studentAge" placeholder="Age" required>
+      <input type="text" id="studentGrade" placeholder="Grade" required>
+      <button type="submit">Add / Update</button>
+    </form>
+  </div>
+
+  <div class="search-section">
+    <h2>Search Student</h2>
+    <input type="text" id="searchInput" placeholder="Enter ID or Name">
+    <button onclick="searchStudent()">Search</button>
+  </div>
+
+  <div class="list-section">
+    <h2>Student Records</h2>
+    <table id="studentTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Grade</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Students will be dynamically added here -->
+      </tbody>
+    </table>
+  </div>
+
+  <div class="file-section">
+    <h2>Save / Load Records</h2>
+    <button onclick="saveToFile()">Save Records</button>
+    <input type="file" id="fileInput" accept=".json" onchange="loadFromFile(event)">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
